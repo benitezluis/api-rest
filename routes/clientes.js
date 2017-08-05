@@ -1,21 +1,23 @@
 import { Router } from 'express';
+import ClientesController from '../controllers/clientes';
 
 const router = Router();
+const clientes = new ClientesController();
 
 router.get('/clientes', (req, res) => {
-  return res.status(200).json({ message: 'Obtener clientes' });
+  clientes.leer(req, res);
 });
 
 router.post('/cliente', (req, res) => {
-  return res.status(200).json({ message: 'Guardar cliente' });
+  clientes.guardar(req, res);
 });
 
 router.put('/cliente/:id', (req, res) => {
-  return res.status(200).json({ message: 'Actualizar cliente' });
+  clientes.actualizar(req, res);
 });
 
 router.delete('/cliente/:id', (req, res) => {
-  return res.status(200).json({ message: 'Eliminar cliente' });
+  clientes.eliminar(req, res);
 });
 
 export default router;

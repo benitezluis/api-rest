@@ -12,9 +12,8 @@ app.use(bodyParser.json());
 
 app.use('/api', routes);
 
-
 app.get('/', (req, res) => {
-  res.send('API REST');
+  res.send('');
 });
 
 mongoose.connect('mongodb://localhost:27017/myDB', { useMongoClient: true }, (error, res) => {
